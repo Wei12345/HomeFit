@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<meta charset="UTF-8">
+	<title>FreeFit健身找場地</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<script src="https://use.fontawesome.com/b462010ced.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+		body{
+			background-color: rgb(241, 242, 242);
+			font-family: cwTeXYen, Varela Round;
+		}
+		#header{
+			width: 94%;
+			height: 80px;
+			background-color: #2ab1ef;
+			padding: 0px 3%;
+			color: white;
+			position: fixed;
+			top: 0px;
+			z-index: 999;
+		}
+		.headerIcon{
+			float: left;
+			height: 80px;
+			line-height: 80px;
+		}
+		.headerTitle{
+			float: left;
+			height: 80px;
+			line-height: 80px;
+			font-size: 2rem;
+			margin-left: 1%;
+		}
+		.headerSmall{
+			float: left;
+			height: 80px;
+			line-height: 80px;
+			font-size: 1.1rem;
+			letter-spacing: .1rem;
+			color: rgba(255, 255, 255, .83);
+			margin-left: 2%;
+		}
+		.headerNav{
+			float: right;
+			height: 80px
+		}
+		.headerNav ul{
+			margin: 0px;
+			float: left;
+		}
+		.headerNav ul li{
+			display: inline-block;
+			font-size: 1.2rem;
+			line-height: 80px;
+			margin-left: 1rem;
+		}
+		.headerLogin{
+			display: inline-block;
+			float: right;
+			font-size: 1.2rem;
+			padding: .4rem .8rem;
+			color: #2ab1ef;
+			background-color: white;
+			border-radius: 1rem;
+			margin-left: 1rem;
+			margin-top: 1.3rem;
+		}
+		#banner{
+			margin-top: 80px;
+			color: white;
+			text-align: center;
+			background-image: url(images/banner1.jpg);
+			background-size: 100% auto;
+			background-position: center;
+			padding: 5.5rem 0px 1rem 0px;
+		}
+		.bannerTitle, .bannerSubtitle{
+			margin: 0px;
+			font-size: 3rem;
+			font-weight: normal;
+		}
+		.bannerContent{
+			margin: 0px;
+			font-size: 1.4rem;
+			line-height: 2.3rem;
+			font-weight: normal;
+		}
+		.bannerMenu{
+			margin-top: 6.5rem;
+		}
+		.bannerSelect{
+			display: inline-block;
+			color: #2ab1ef;
+			background-color: rgb(248, 248, 248);
+			border: 1px solid rgb(166, 166, 166);
+			border-radius: .3rem;
+			padding: 0px .5rem;
+			margin-right: .5rem;
+		}
+		.bannerSelect select{
+			appearance: none;
+			-webkit-appearance: none;
+			font-size: 1.1rem;
+			padding: 1rem 1.5rem 1rem .5rem;
+			border: none;
+		}
+		.bannerSelect select:focus{
+			outline: none;
+		}
+		.bannerSelect .fa-angle-down{
+			position: relative;
+			top: .3rem;
+		}
+		.bannerMenuButton{
+			font-size: 1.2rem;
+			background-color: #2ab1ef;
+			padding: .9rem 2rem;
+			border-radius: .2rem;
+			border: 1px solid #2ab1ef;
+			color: white;
+		}
+		.bannerMenuSearch{
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+			width: 20rem;
+			height: 2rem;
+			padding: .2rem 1rem;
+			border-radius: .3rem;
+			border: 1px solid white;
+		}
+		#ratation{
+			width: 85%;
+			margin: 3% auto 4.5%;
+			position: relative;
+		}
+		.ratationCaret{
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			height: 3rem;
+			margin: auto;
+			color: #fa9326;
+		}
+		.ratationCaret-left{
+			left: 0px;
+		}
+		.ratationCaret-right{
+			right: 0px;
+		}
+		.ratationItem{
+			width: 19.5%;
+			margin: 0px 2.5%;
+			padding: 2% 0px;
+			display: inline-block;
+			background-color: white;
+			text-align: center;
+			border-radius: .5rem;
+			font-weight: bold;
+			font-size: 1.3rem;
+		}
+		.ratationItem span{
+			font-weight: normal;
+			color: #fa9326;
+		}
+		.divider{
+			background-color: #d1d1d1;
+			width: 95%;
+			height: 1px;
+			margin: 0px auto;
+		}
+		#recommend{
+			text-align: center;
+			color: #6d6e71;
+			margin: 3% 3%;
+		}
+		.recommendTitle{
+			font-size: 1.4rem;
+			font-weight: bold;
+		}
+		.recommendItem1{
+			display: inline-block;
+			width: 41%;
+			margin-right: 2%;
+		}
+		.recommendItem2{
+			display: inline-block;
+			width: 27%;
+		}
+		.recommendItem3{
+			display: inline-block;
+			width: 27%;
+			margin-left: 2%;
+		}
+		.recommendImg1{
+			background-image: url(images/site1.jpg);
+			background-position: center;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 20rem;
+		}
+		.recommendImg2{
+			background-image: url(images/site2.jpg);
+			background-position: center;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 20rem;
+		}
+		.recommendImg3{
+			background-image: url(images/site3.jpg);
+			background-position: center;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 20rem;
+		}
+		.recommendContent{
+			text-align: right;
+			font-size: 1.1rem;
+		}
+		#browse{
+			margin: 3%;
+			text-align: center;
+		}
+		.browseTitle{
+			color: #6d6e71;
+			font-size: 1.9rem;
+			font-weight: bolder;
+		}
+		.browseSelect{
+			display: inline-block;
+			color: #2ab1ef;
+			background-color: rgb(248, 248, 248);
+			border: 1px solid rgb(166, 166, 166);
+			border-radius: .3rem;
+			padding: 0px .5rem;
+			margin-right: .5rem;
+		}
+		.browseSelect select{
+			appearance: none;
+			-webkit-appearance: none;
+			font-size: 1.1rem;
+			padding: 1rem 1.5rem 1rem .5rem;
+			border: none;
+		}
+		.browseSelect select:focus{
+			outline: none;
+		}
+		.browseSelect .fa-angle-down{
+			position: relative;
+			top: .3rem;
+		}
+		#footer{
+			background-color: #032230;
+			padding: 3% 6% 4%;
+		}
+		.footerIcon{
+			display: inline-block;
+			height: 80px;
+			color: #2ab1ef;
+			vertical-align: top;
+		}
+		.footerTitle{
+			display: inline-block;
+			height: 80px;
+			font-size: 2rem;
+			margin-left: 1%;
+			color: #2ab1ef;
+			vertical-align: top;
+		}
+		.footerAbout{
+			display: inline-block;
+			margin-left: 5%;
+			color: #d1d1d1;
+			max-width: 26rem;
+		}
+		.footerAbout ul{
+			list-style: none;
+			padding: 0px;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 4%;
+			margin-bottom: 3rem;
+		}
+		.footerAbout .ulTitle{
+			font-size: 1.1rem;
+			font-weight: bold;
+			color: #0c75a6;
+		}
+		.footerAbout li{
+			margin-bottom: 1rem;
+		}
+		.footerAbout .footerAboutSmall{
+			display: block;
+			color: #a0a1a4;
+		}
+		.footerContact{
+			display: inline-block;
+			vertical-align: top;
+			color: #2ab1ef;
+			margin-left: 2%;
+		}
+		.footerContact .fa{
+			letter-spacing: 1.5rem;
+		}
+		.footerContactTitle{
+			display: block;
+			font-size: 1.1rem;
+			margin-top: 2rem;
+			color: #0c75a6;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<div class="headerIcon">
+			<i class="fa fa-search fa-2x"></i>
+		</div>
+		<div class="headerTitle">
+			FreeFit
+		</div>
+		<div class="headerSmall">
+			挑場館 | 替你挑選好場館
+		</div>
+		<nav class="headerNav">
+			<ul>
+				<li>成為場地主</li>
+				<li>預約查詢</li>
+			</ul>
+			<div class="headerLogin">登入/註冊</div>
+		</nav>
+	</header>
+	<section id="banner">
+		<h1 class="bannerTitle">FreeFit 選場地</h1>
+		<h1 class="bannerSubtitle">自由自在 不受拘束</h1>
+		<h2 class="bannerContent">整個城市都是我的個人健身房</h2>
+		<div class="bannerMenu">
+			<div class="bannerSelect">
+				<i class="fa fa-list-alt"></i>
+				<select>
+					<option disabled="disabled" selected>訓練項目</option>
+					<option>--</option>
+					<option>重量訓練</option>
+					<option>TRX</option>
+					<option>瑜珈</option>
+					<option>有氧運動</option>
+				</select>
+				<i class="fa fa-angle-down fa-2x"></i>
+			</div>
+			<div class="bannerSelect">
+				<i class="fa fa-tag"></i>
+				<select>
+					<option disabled="disabled" selected>地點</option>
+					<option>--</option>
+					<option>台北市</option>
+					<option>新北市</option>
+					<option>台中市</option>
+					<option>台南市</option>
+					<option>高雄市</option>
+				</select>
+				<i class="fa fa-angle-down fa-2x"></i>
+			</div>
+			<div class="bannerSelect">
+				<i class="fa fa-user"></i>
+				<select>
+					<option disabled="disabled" selected>訓練人數</option>
+					<option>--</option>
+					<option>1-10</option>
+					<option>11-20</option>
+					<option>21-40</option>
+					<option>41-60</option>
+					<option>61-80</option>
+					<option>81-100</option>
+					<option>101-200</option>
+					<option>201-300</option>
+					<option>301-400</option>
+					<option>401-500</option>
+					<option>500+</option>
+				</select>
+				<i class="fa fa-angle-down fa-2x"></i>
+			</div>
+			<button class="bannerMenuButton">找場館</button>
+		</div>
+		<input class="bannerMenuSearch" type="text" placeholder="尋找合適的健身場地">
+	</section>
+	<section id="ratation">
+		<div class="ratationCaret ratationCaret-left">
+			<i class="fa fa-caret-left fa-3x"></i>	
+		</div>
+		<div class="ratationItem">重量訓練<br><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDc1NS45NjIgNzU1Ljk2MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNzU1Ljk2MiA3NTUuOTYyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTU2OS42NzMsMTc5LjU0NWwtNDQuMjI4LDExNS42MDNjLTEuNTMsMy45ODktNC4xOTYsNy40MzEtNy42ODMsOS44OWwtOTYuMzAzLDY3LjE4OXYxODQuMzY1ICAgYy0wLjA1NSw2LjE1MywwLjA4NywyNS40MzEsNi45MTgsMzcuODljNi44NDEsMTIuNDU5LDY3LjU0OSwxMjkuOTk1LDY3LjU0OSwxMjkuOTk1YzUuNDc2LDEwLjU1OCwxLjM2NiwyMy41NzMtOS4xOSwyOS4wNiAgIGMtMy4xNywxLjY1LTYuNTY4LDIuNDI2LTkuOTEyLDIuNDI2Yy03Ljc5MiwwLTE1LjMwMS00LjIyOS0xOS4xNDctMTEuNjE3bC03NS40MzktMTQ1LjIxOWMtMS4yNjgsMC4xMDktMi41NTgsMC4xOTYtMy44NTcsMC4xOTYgICBjLTEuMzAxLDAtMi41OTEtMC4wODctMy44NTgtMC4xOTZsLTc1LjQ0LDE0NS4yMTljLTMuODQ3LDcuMzg4LTExLjM1NSwxMS42MTctMTkuMTQ3LDExLjYxN2MtMy4zNDQsMC02Ljc0My0wLjc3NS05LjkxMi0yLjQyNiAgIGMtMTAuNTU3LTUuNDg2LTE0LjY2Ni0xOC41MDItOS4xOTEtMjkuMDZjMCwwLDYwLjcwOC0xMTcuNTM2LDY3LjU0OS0xMjkuOTk1czYuOTczLTMxLjczNiw2LjkxOC0zNy44OVYzNzIuMjI3bC05Ni4zMDMtNjcuMTg5ICAgYy0zLjQ4Ni0yLjQ1OS02LjE1My01LjkwMS03LjY4My05Ljg5bC00NC4yMjgtMTE1LjYwM2MtNC4yNjItMTEuMTE0LDEuMzAxLTIzLjU3MywxMi40MTUtMjcuODI0ICAgYzExLjEzNi00LjI0LDIzLjU3MywxLjMxMiwyNy44MjQsMTIuNDI2bDQxLjg4OSwxMDkuNTA0bDgwLjg3Miw1Ny4xODljMC4yMjktMC4wMTEsMC40NDgtMC4wNjYsMC42NzctMC4wNjZsMjcuNjE3LDAuMjI5ICAgbDI3LjYxNi0wLjIyOWMwLjIyOSwwLDAuNDQ4LDAuMDU1LDAuNjc4LDAuMDY1bDgwLjg3MS01Ny4xODlsNDEuODg5LTEwOS41MDRjNC4yNTItMTEuMTE0LDE2LjY4OC0xNi42NjYsMjcuODI0LTEyLjQyNiAgIEM1NjguMzczLDE1NS45NzMsNTczLjkzNiwxNjguNDMxLDU2OS42NzMsMTc5LjU0NXogTTQzOC4xOTIsMjQxLjE3MmMwLDMzLjg0Ni0yNy40MzEsNjEuMjc2LTYxLjI3Niw2MS4yNzYgICBzLTYxLjI4OC0yNy40MzEtNjEuMjg4LTYxLjI3NmMwLTMzLjg0NiwyNy40NTMtNjEuMjg4LDYxLjI4OC02MS4yODhTNDM4LjE5MiwyMDcuMzI2LDQzOC4xOTIsMjQxLjE3Mkw0MzguMTkyLDI0MS4xNzJ6ICAgIE02NjkuOTY1LDc3LjIxYzQuODMsMCw4LjczMSwzLjkxMiw4LjcxLDguNzMyYzAsNC44My0zLjkxMiw4Ljc0My04LjczMiw4Ljc0M2gtOC43MzF2NDAuNzQyYzAsNS45NDUtNC44MDksMTAuNzc1LTEwLjc2NSwxMC43NzUgICBoLTEyLjA2NWMtNS45NTYsMC0xMC43NzUtNC44My0xMC43NzUtMTAuNzc1djI1LjY5M2MwLDUuOTQ1LTQuODE5LDEwLjc2NS0xMC43NzUsMTAuNzY1aC0xMi4wNzYgICBjLTUuOTU2LDAtMTAuNzY1LTQuODE5LTEwLjc2NS0xMC43NjRWOTQuNjg1SDE2MC41NzN2NjYuNDM1YzAsNS45NDUtNC44MywxMC43NjUtMTAuNzc1LDEwLjc2NWgtMTIuMDg3ICAgYy01Ljk0NSwwLTEwLjc2NS00LjgxOS0xMC43NjUtMTAuNzY0di0yNS42OTNjMCw1Ljk0NS00LjgzMSwxMC43NzUtMTAuNzc2LDEwLjc3NWgtMTIuMDg3Yy01Ljk0NSwwLTEwLjc2NS00LjgzLTEwLjc2NS0xMC43NzUgICBWOTQuNjg1aC03LjNjLTQuODE5LDAtOC43MzItMy45MTMtOC43MzItOC43NDNjMC00LjgyLDMuOTEzLTguNzMyLDguNzMyLTguNzMyaDcuM1YzNi40NjljMC01Ljk1Niw0LjgyLTEwLjc3NiwxMC43NjUtMTAuNzc2ICAgaDEyLjA4N2M1Ljk0NSwwLDEwLjc3Niw0LjgyLDEwLjc3NiwxMC43NzZWMTAuNzc1QzEyNi45NDYsNC44MywxMzEuNzY2LDAsMTM3LjcxMSwwaDEyLjA4N2M1Ljk0NSwwLDEwLjc3NSw0LjgzLDEwLjc3NSwxMC43NzUgICBWNzcuMjFoNDMzLjQzOFYxMC43NzVDNTk0LjAxMSw0LjgzLDU5OC44MiwwLDYwNC43NzYsMGgxMi4wNzZjNS45NTYsMCwxMC43NzUsNC44MywxMC43NzUsMTAuNzc1djI1LjY5MyAgIGMwLTUuOTU2LDQuODE5LTEwLjc3NiwxMC43NzYtMTAuNzc2aDEyLjA2NGM1Ljk1NiwwLDEwLjc2NSw0LjgyLDEwLjc2NSwxMC43NzZWNzcuMjFINjY5Ljk2NUw2NjkuOTY1LDc3LjIxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" /><br><span>查看方案</span></div>
+		<div class="ratationItem">TRX<br><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDc4My40MjkgNzgzLjQyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNzgzLjQyOSA3ODMuNDI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTMzOC4yODcsMzEwLjg3NmMwLTMxLjA2MiwyNS4xODEtNTYuMjQzLDU2LjI1My01Ni4yNDNjMzEuMDYyLDAsNTYuMjU0LDI1LjE4MSw1Ni4yNTQsNTYuMjQzICAgYzAsMzEuMDczLTI1LjE4MSw1Ni4yNTQtNTYuMjU0LDU2LjI1NEMzNjMuNDY4LDM2Ny4xMywzMzguMjg3LDM0MS45NDksMzM4LjI4NywzMTAuODc2TDMzOC4yODcsMzEwLjg3NnogTTU2MC4wNTgsMjI4Ljc3OSAgIGMtMTAuMjItMy44OTUtMjEuNjM0LDEuMjA0LTI1LjUzOSwxMS40MDNsLTM4LjQ1LDEwMC41MDhsLTc0LjIzMSw1Mi41Yy0wLjIxNy0wLjAxLTAuNDEyLTAuMDY0LTAuNjE4LTAuMDY0aC0yNS4zNDRoLTI1LjM0NCAgIGMtMC4yMDYsMC0wLjQwMSwwLjA1NS0wLjYxOCwwLjA2NGwtNzQuMjMxLTUyLjVsLTM4LjQ1LTEwMC41MDhjLTMuOTA2LTEwLjE5OS0xNS4zMTktMTUuMjk3LTI1LjUzOS0xMS40MDMgICBjLTEwLjE5OSwzLjkwNi0xNS4zMDksMTUuMzQxLTExLjQwMywyNS41NGw0MC41OTgsMTA2LjExN2MxLjM4OSwzLjY1NiwzLjg1Miw2LjgyNCw3LjA1Miw5LjA4MWw4Ny4yMTcsNjEuNjg5djE2OS4yMDYgICBjMC4wNDMsNS42NTIsMi41MzksMTkuMDg0LTMuOTM4LDMyLjM3NGwtNjMuMjQxLDEyMS43NGMtNS4wMzQsOS42ODgtMS4yNTksMjEuNjIzLDguNDQxLDI2LjY2OCAgIGMyLjkwNywxLjUwOCw2LjAyMSwyLjIzNCw5LjA5MSwyLjIzNGM3LjE1LDAsMTQuMDUtMy44OTUsMTcuNTY1LTEwLjY3Nmw2OS4yNTEtMTMzLjI5NGMxLjE3MiwwLjEwOCwyLjM1NCwwLjE5NSwzLjU0OCwwLjE5NSAgIHMyLjM3Ni0wLjA4NywzLjU0OC0wLjE5NWw2OS4yNTEsMTMzLjI5NGMzLjUxNSw2Ljc4MSwxMC40MTUsMTAuNjc2LDE3LjU2NSwxMC42NzZjMy4wNywwLDYuMTg0LTAuNzI3LDkuMDkxLTIuMjM0ICAgYzkuNy01LjA0NSwxMy40NzYtMTYuOTc5LDguNDQxLTI2LjY2OGwtNjMuMjQxLTEyMS43NGMtNi40ODctMTMuMjktMy45ODEtMjYuNzIyLTMuOTM4LTMyLjM3NFY0MzEuMjA2bDg3LjIxNy02MS42ODkgICBjMy4yMDEtMi4yNTYsNS42NjQtNS40MjQsNy4wNTMtOS4wODFsNDAuNTk4LTEwNi4xMTdDNTc1LjM2NywyNDQuMTIsNTcwLjI1NiwyMzIuNjg1LDU2MC4wNTgsMjI4Ljc3OXogTTU2OC4wODYsMTE4LjcwMlYxMC4wMzYgICBjMC01LjU0NC00LjQ4LTEwLjAzNi0xMC4wMjQtMTAuMDM2cy0xMC4wMzYsNC40OTItMTAuMDM2LDEwLjAzNnYxMDguNjY3Yy0yMi40MDMsNC42NDQtMzkuMjg1LDI0LjUyLTM5LjI4NSw0OC4yNzkgICBjMCwyNy4xODgsMjIuMTIyLDQ5LjMyMSw0OS4zMjEsNDkuMzIxYzI3LjE4OCwwLDQ5LjMyLTIyLjEzMyw0OS4zMi00OS4zMjFDNjA3LjM4MiwxNDMuMjIyLDU5MC40OTEsMTIzLjM0Niw1NjguMDg2LDExOC43MDJ6ICAgIE01NTguMDYyLDE5Ni4yNDJjLTE2LjEzMywwLTI5LjI2MS0xMy4xMjctMjkuMjYxLTI5LjI2MWMwLTE2LjEyMiwxMy4xMjgtMjkuMjUsMjkuMjYxLTI5LjI1czI5LjI1LDEzLjEyNywyOS4yNSwyOS4yNSAgIEM1ODcuMzEyLDE4My4xMTUsNTc0LjE5NSwxOTYuMjQyLDU1OC4wNjIsMTk2LjI0MnogTTIzNS40MDMsMTE4LjcwMlYxMC4wMzZDMjM1LjQwMyw0LjQ5MiwyMzAuOTEyLDAsMjI1LjM2OCwwICAgcy0xMC4wMzYsNC40OTItMTAuMDM2LDEwLjAzNnYxMDguNjY3Yy0yMi4zOTMsNC42NDQtMzkuMjg2LDI0LjUyLTM5LjI4Niw0OC4yNzljMCwyNy4xODgsMjIuMTMzLDQ5LjMyMSw0OS4zMjEsNDkuMzIxICAgYzI3LjE5OSwwLDQ5LjMyMS0yMi4xMzMsNDkuMzIxLTQ5LjMyMUMyNzQuNjg4LDE0My4yMjIsMjU3LjgwNywxMjMuMzQ2LDIzNS40MDMsMTE4LjcwMnogTTIyNS4zNjgsMTk2LjI0MiAgIGMtMTYuMTMzLDAtMjkuMjYxLTEzLjEyNy0yOS4yNjEtMjkuMjYxYzAtMTYuMTIyLDEzLjEyOC0yOS4yNSwyOS4yNjEtMjkuMjVzMjkuMjYxLDEzLjEyNywyOS4yNjEsMjkuMjUgICBDMjU0LjYyOCwxODMuMTE1LDI0MS41LDE5Ni4yNDIsMjI1LjM2OCwxOTYuMjQyeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" /><br><span>查看方案</span></div>
+		<div class="ratationItem">瑜珈<br><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDcxLjQ5IDcxLjQ5MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNzEuNDkgNzEuNDkxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CgoJPGcgaWQ9IlBhZ2UtMV8xNF8iPgoJCTxwYXRoIGlkPSJGaWxsLTIiIGQ9Ik01MS40NzMsNDcuMzM0TDMxLjk0LDM0LjE0NmwtNy40MywxMC45MzhoOC4yODdjMS43MDYsMCwzLjA4OSwxLjM4MywzLjA4OSwzLjA4OSAgICB2MTAuMzkyYzAsMS43MDUtMS4zODMsMy4wODgtMy4wODksMy4wODhzLTMuMDg4LTEuMzgzLTMuMDg4LTMuMDg4di03LjMwNGgtOS4zOTVsLTEuNzM2LDIuNTU2ICAgIGMtMi4wOTUsMy4wMjEtNS41MTIsNC44MDktOS4xNTYsNC44MDlIMy4wODhDMS4zODIsNTguNjI1LDAsNTcuMjQzLDAsNTUuNTM4YzAtMS43MDYsMS4zODItMy4wOSwzLjA4OC0zLjA5aDYuMzM0ICAgIGMxLjYyLDAsMy4xNC0wLjc5NSw0LjA2NC0yLjEyN2wxNS4wNzUtMjIuMTkyYzAuOTU3LTEuNDA4LDIuODcyLTEuNzc1LDQuMjgzLTAuODI0TDU0LjkzLDQyLjIxNSAgICBjMS40MTMsMC45NTQsMS43ODYsMi44NzQsMC44MzEsNC4yODdDNTQuODA2LDQ3LjkxNyw1Mi44ODcsNDguMjg4LDUxLjQ3Myw0Ny4zMzRMNTEuNDczLDQ3LjMzNHogTTM3LjE3NywyNC4wNTMgICAgYzQuMDA5LDAsNy4yNTktMy4yNSw3LjI1OS03LjI1OXMtMy4yNS03LjI1OS03LjI1OS03LjI1OXMtNy4yNTksMy4yNS03LjI1OSw3LjI1OVMzMy4xNjgsMjQuMDUzLDM3LjE3NywyNC4wNTNMMzcuMTc3LDI0LjA1M3ogICAgIE02Ni4zNTksNTEuNDV2LTIuMTY4YzAtMS4xNjgtMC45NTEtMi4xMTgtMi4xMTktMi4xMThoLTMuNzY5Yy0wLjQ2NSwwLTAuODQyLDAuMzc3LTAuODQyLDAuODQyczAuMzc3LDAuODQzLDAuODQyLDAuODQzaDMuNzY5ICAgIGMwLjI0LDAsMC40MzQsMC4xOTQsMC40MzQsMC40MzR2Mi4xNjJoLTYuMjE3Yy0yLjkwMywwLTUuMjU2LDIuMzUzLTUuMjU2LDUuMjU2YzAsMi45MDIsMi4zNTMsNS4yNTUsNS4yNTYsNS4yNTVoNy43NzcgICAgYzIuOTAzLDAsNS4yNTYtMi4zNTMsNS4yNTYtNS4yNTVDNzEuNDksNTMuODM4LDY5LjIwNCw1MS41MTYsNjYuMzU5LDUxLjQ1TDY2LjM1OSw1MS40NXoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9zdmc+Cg==" /><br><span>查看方案</span></div>
+		<div class="ratationItem">有氧運動<br><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDc3Ny43MyA3NzcuNzMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDc3Ny43MyA3NzcuNzM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBpZD0iRmlsbC0yMyIgZD0iTTUyMi44ODIsNzc3LjQ4OWMtMS4yMzgsMC4xODQtMi40OSwwLjI0MS0zLjcwNywwLjI0MSAgIGMtMTMuMTg5LDAtMjQuNzAxLTkuNzM0LTI2LjU0OS0yMy4xNjNsLTIzLjkyMi0xNzIuNjhjLTIuNTcsMC4zNzktNS4xNzYsMC42NDQtNy44MzgsMC42NDRjLTQuMDY0LDAtOC4wMzUtMC40OTQtMTEuODU3LTEuMzY2ICAgbC05Ny45MjEsMTgyLjQyNGMtNC44NDQsOS4wMjItMTQuMTA3LDE0LjE0Mi0yMy42OCwxNC4xNDJjLTQuMjgyLDAtOC42MzItMS4wMTEtMTIuNjcyLTMuMTggICBjLTEzLjA2Mi03LjAxNC0xNy45NzUtMjMuMjg5LTEwLjk2MS0zNi4zNTJsMTA1LjE2NS0xOTUuOTExYy0xLjExMy00LjMwNS0xLjc2OC04Ljc5Mi0xLjc2OC0xMy40NTIgICBjMC0yOC4yNDgtOS43OTEtNzAuMDg3LTI2LjE4My0xMTEuOTM3Yy0xNi43MDEtNDIuNTg0LTMyLjk4OC02Ny4wMS0zOS43MTQtNzQuMDgxbC00MC4wMjUsNjQuNTQzbDY2LjA5Miw1Ni45NjcgICBjMTEuMjI2LDkuNjg4LDEyLjQ4OCwyNi42NDEsMi44MDEsMzcuODY2Yy01LjMwMyw2LjE2NC0xMi44MSw5LjMzMi0yMC4zNTEsOS4zMzJjLTYuMjA5LDAtMTIuNDQyLTIuMTM1LTE3LjUxNi02LjUwOCAgIGwtODMuNDctNzEuOTQ2Yy0xMC4wMDktOC42MzItMTIuMjU5LTIzLjI1NS01LjI5Mi0zNC40OTJjMCwwLDY2Ljc4MS05OC4yNjYsNzYuMDg5LTExMS4wMTggICBjMTAuNzc4LTE0Ljc3Miw1MC45OTgtNDAuNTg3LDYxLjYwNC01Mi45MTVjMTUuOTU1LTE4LjU0OSwyOS45NzEtNzYuNDY4LDI5Ljk3MS03Ni40NjhsLTcyLjE1My0xMTcuMjUgICBjLTcuNzcxLTEyLjYzOC0zLjgzMy0yOS4xNzgsOC43OTItMzYuOTM3YzEyLjYzOC03Ljc4MiwyOS4xNjYtMy44MzQsMzYuOTM3LDguNzgxbDc4LjUzNSwxMjcuNjE1ICAgYzQuMDUxLDYuNTg4LDUuMDQ5LDE0LjYxMiwyLjc4OSwyMS45OTJsLTM2Ljc4OSwxMTkuMTc5YzQyLjQxMiw1NS40NCw4Mi4yOTksMTYzLjMxMyw4NS4xMTEsMjM4Ljk0M2wzMS4zOTMsMjI2LjY5NiAgIEM1NDcuODM3LDc2MS45MTMsNTM3LjU5Nyw3NzUuNDU3LDUyMi44ODIsNzc3LjQ4OUw1MjIuODgyLDc3Ny40ODl6IE0zMDguMDU1LDI0NC44MDVjNDIuMTgzLDAsNzYuMzc2LTM0LjE5Myw3Ni4zNzYtNzYuMzc2ICAgYzAtNDIuMTcxLTM0LjE5NC03Ni4zNjUtNzYuMzc2LTc2LjM2NXMtNzYuMzc2LDM0LjE5NC03Ni4zNzYsNzYuMzY1QzIzMS42NzksMjEwLjYxMiwyNjUuODczLDI0NC44MDUsMzA4LjA1NSwyNDQuODA1ICAgTDMwOC4wNTUsMjQ0LjgwNXoiIGZpbGw9IiMwMDAwMDAiLz4KPC9nPgo8L3N2Zz4K" /><br><span>查看方案</span></div>
+		<div class="ratationCaret ratationCaret-right">
+			<i class="fa fa-caret-right fa-3x"></i>	
+		</div>
+	</section>
+	<div class="divider"></div>
+	<section id="recommend">
+		<p>
+			<i class="fa fa-home fa-3x"></i><br>
+			<span class="recommendTitle">為你精選場館</span>	
+		</p>
+		<article class="recommendItem1">
+			<article class="recommendImg1"></article>
+			<p class="recommendContent">場館1</p>
+		</article>
+		<article class="recommendItem2">
+			<article class="recommendImg2"></article>
+			<p class="recommendContent">場館2</p>
+		</article>
+		<article class="recommendItem3">
+			<article class="recommendImg3"></article>
+			<p class="recommendContent">場館3</p>
+		</article>
+	</section>
+	<div class="divider"></div>
+	<section id="browse">
+		<p class="browseTitle">
+			1000多個類型場館，立即瀏覽
+		</p>
+		<div class="browseSelect">
+			<i class="fa fa-list-alt"></i>
+			<select>
+				<option disabled="disabled" selected>訓練項目</option>
+				<option>--</option>
+				<option>重量訓練</option>
+				<option>TRX</option>
+				<option>瑜珈</option>
+				<option>有氧運動</option>
+			</select>
+			<i class="fa fa-angle-down fa-2x"></i>
+		</div>
+		<button class="bannerMenuButton">瀏覽場館</button>
+	</section>
+	<footer id="footer">
+		<div class="footerIcon">
+			<i class="fa fa-search fa-2x"></i>
+		</div>
+		<div class="footerTitle">
+			FreeFit
+		</div>
+		<div class="footerAbout">
+			<p>關於FreeFit</p>
+			<ul>
+				<li class="ulTitle">場館內容</li>
+				<li>找場館</li>
+				<li>幫我找</li>
+			</ul>
+			<ul>
+				<li class="ulTitle">合作提案</li>
+				<li>刊場館</li>
+			</ul>
+			<ul>
+				<li class="ulTitle">網站條款</li>
+				<li>服務條款</li>
+			</ul>
+			<small class="footerAboutSmall">
+				本網站的所有資訊均由用戶提供，如有觸犯您的知識版權，請聯繫我們，我們會於接到投訴後即時處理。<br><br>© freefit 找場館 2017 All Rights Reserved
+			</small>
+		</div>
+		<div class="footerContact">
+			<i class="fa fa-facebook-square fa-2x"></i>
+			<i class="fa fa-envelope fa-2x"></i><br>
+			<span class="footerContactTitle">聯絡我們</span>
+		</div>
+	</footer>
+</body>
+</html>

@@ -42,6 +42,7 @@
 			color: rgba(255, 255, 255, .83);
 			margin-left: 2%;
 		}
+		
 		.headerNav{
 			float: right;
 			height: 80px
@@ -66,6 +67,12 @@
 			border-radius: 1rem;
 			margin-left: 1rem;
 			margin-top: 1.3rem;
+		}
+		.headerMobileNav{
+			display: none;
+			height: 80px;
+			line-height: 80px;
+			float: right;
 		}
 		#banner{
 			margin-top: 80px;
@@ -135,6 +142,21 @@
 			padding: .2rem 1rem;
 			border-radius: .3rem;
 			border: 1px solid white;
+		}
+		.bannerMobileMenuSearch{
+			font-family: cwTeXYen, Varela Round;
+			margin-top: 1rem;
+			margin-bottom: 0px;
+			width: 89%;
+			height: 2rem;
+			padding: .2rem 1rem;
+			border-radius: .3rem;
+			border: 1px solid white;
+		}
+		.bannerMobileMenu{
+			display: none;
+			background-color: #639ebf;
+			padding: 8% 5%;
 		}
 		#plan{
 			width: 85%;
@@ -267,7 +289,7 @@
 			top: .3rem;
 		}
 		#footer{
-			background-color: #737373;
+			background-color: #a6a6a6;
 			padding: 3% 6% 4%;
 		}
 		.footerTitle{
@@ -313,8 +335,15 @@
 			color: black;
 			margin-left: 2%;
 		}
-		.footerContact .fa{
+		.footerContact .fa, .footerMobileContact .fa{
 			letter-spacing: 1.5rem;
+		}
+		.footerMobileContact{
+			display: none;
+			vertical-align: top;
+			color: black;
+			margin-left: 2%;
+			margin: 10% 0px 20%;
 		}
 		.footerContactTitle{
 			display: block;
@@ -322,6 +351,86 @@
 			margin-top: 2rem;
 			color: #333333;
 			font-weight: bold;
+		}
+		@media (max-width:768px){
+			.headerSmall, .headerNav, .bannerMenuSearch, .bannerMenu{
+				display: none;
+			}
+			.headerMobileNav{
+				display: inline-block;
+			}
+			.bannerTitle, .bannerSubtitle{
+				font-size: 2.4rem;
+			}
+			.bannerContent{
+				font-size: 1.2rem;
+			}
+			.bannerMobileMenu{
+				display: block;
+			}
+			.bannerSelect{
+				width: 94%;
+				margin-bottom: 5%;
+			}
+			.bannerSelect select{
+				width: 80%;
+			}
+			.bannerMobileMenuSearch{
+				font-size: 1.2rem;
+				height: 3rem;
+			}
+			.bannerMenuButton{
+				width: 100%
+			}
+			#plan{
+				margin: 8% auto 5%;
+			}
+			.planItem{
+				width: 80%;
+				margin: 5% 10%;
+			}
+			.planItem:nth-child(1){
+				margin-top: 0px;
+			}
+			.planItem p{
+				margin: 75vw 0px 5vw;
+				padding: 8.5vw 0px;
+			}
+			.planButton{
+				margin-bottom: 5vw;
+				padding: 4vw 15vw;
+			}
+			.recommendImg1, .recommendImg2, .recommendImg3{
+				height: 100%;
+			}
+			.recommendItem1, .recommendItem2, .recommendItem3{
+				margin: 0px auto;
+				width: 75%;
+				height: 125vw;
+				margin-bottom: 15vw;
+			}
+			.recommendItem1 p, .recommendItem2 p, .recommendItem3 p{
+				margin: 2vw 0px 0px;
+			}
+			#browse{
+				margin: 8%;
+			}
+			.browseSelect{
+				width: 94%;
+				margin-bottom: 5%;
+			}
+			.browseSelect select{
+				width: 80%;
+			}
+			#footer{
+				padding: 10% 8% 14%;
+			}
+			.footerContact{
+				display: none;
+			}
+			.footerMobileContact{
+				display: block;
+			}
 		}
 	</style>
 </head>
@@ -339,6 +448,9 @@
 				<li>預約查詢</li>
 			</ul>
 			<div class="headerLogin">登入/註冊</div>
+		</nav>
+		<nav class="headerMobileNav">
+			<i class="fa fa-bars fa-2x"></i>
 		</nav>
 	</header>
 	<section id="banner">
@@ -393,6 +505,55 @@
 			<button class="bannerMenuButton">找教練</button>
 		</div>
 		<input class="bannerMenuSearch" type="text" placeholder="尋找合適的個人教練">
+	</section>
+	<section class="bannerMobileMenu">
+		<div class="bannerSelect">
+				<i class="fa fa-list-alt"></i>
+				<select>
+					<option disabled="disabled" selected>訓練項目</option>
+					<option>--</option>
+					<option>重量訓練</option>
+					<option>TRX</option>
+					<option>瑜珈</option>
+					<option>有氧運動</option>
+				</select>
+				<i class="fa fa-angle-down fa-2x"></i>
+			</div>
+			<div class="bannerSelect">
+				<i class="fa fa-tag"></i>
+				<select>
+					<option disabled="disabled" selected>地點</option>
+					<option>--</option>
+					<option>台北市</option>
+					<option>新北市</option>
+					<option>台中市</option>
+					<option>台南市</option>
+					<option>高雄市</option>
+				</select>
+				<i class="fa fa-angle-down fa-2x"></i>
+			</div>
+			<div class="bannerSelect">
+				<i class="fa fa-user"></i>
+				<select>
+					<option disabled="disabled" selected>上課人數</option>
+					<option>--</option>
+					<option>1-10</option>
+					<option>11-20</option>
+					<option>21-40</option>
+					<option>41-60</option>
+					<option>61-80</option>
+					<option>81-100</option>
+					<option>101-200</option>
+					<option>201-300</option>
+					<option>301-400</option>
+					<option>401-500</option>
+					<option>500+</option>
+				</select>
+				<i class="fa fa-angle-down fa-2x"></i>
+			</div>
+			<button class="bannerMenuButton">找教練</button>
+		</div>
+		<input class="bannerMobileMenuSearch" type="text" placeholder="尋找合適的個人教練">
 	</section>
 	<section id="plan">
 		<article class="planItem">
@@ -453,6 +614,11 @@
 		</div>
 		<div class="footerAbout">
 			<p>關於HomeFit</p>
+			<div class="footerMobileContact">
+				<i class="fa fa-facebook-square fa-2x"></i>
+				<i class="fa fa-envelope fa-2x"></i><br>
+				<span class="footerContactTitle">聯絡我們</span>
+			</div>
 			<ul>
 				<li class="ulTitle">教練內容</li>
 				<li>找教練</li>
